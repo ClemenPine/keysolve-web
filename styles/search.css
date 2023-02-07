@@ -11,6 +11,8 @@
     text-align: center;
     font-size: 3vw;
     font-family: "Fira Code", monospace;
+
+    transition: background-color 300ms;
 }
 
 #search:focus {

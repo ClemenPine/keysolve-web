@@ -24,4 +24,6 @@
     
     box-shadow: 0.2vw 0.2vw black;
     user-select: none;
+
+    transition: background-color 200ms;
 }
