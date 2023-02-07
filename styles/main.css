@@ -1,0 +1,41 @@
+@import 'grid.css';
+@import 'key.css';
+@import 'search.css';
+
+* { 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+     box-sizing: border-box; 
+}
+
+:root {
+    --color-box: rgb(62, 62, 62);
+    --color-bg: rgb(39, 39, 39);
+    --color-light: rgb(232, 232, 232);
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    
+    background: var(--color-bg);
+    color: var(--color-bg);
+
+    font-family: "Fira Code", monospace;
+}
+
+#canvas {
+    display: flex;
+    margin: 0px 4vw;
+    height: 100%;
+
+    flex-direction: column;
+    justify-content: center;
+}
+
+.center {
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+}

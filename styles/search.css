@@ -1,0 +1,41 @@
+#search {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    
+    background: var(--color-1);
+    color: var(--color-bg);
+
+    text-align: center;
+    font-size: 3vw;
+    font-family: "Fira Code", monospace;
+}
+
+#search:focus {
+    background: var(--color-light);
+    outline: none;
+}
+
+#complete {
+    position: absolute;
+    top: 0;
+
+    display: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    
+    color: gray;
+
+    font-size: 3vw;
+    text-align: center;
+    white-space: pre;
+}
+
+#search-wrapper {
+    position: relative;
+
+    height: 4vw;
+}

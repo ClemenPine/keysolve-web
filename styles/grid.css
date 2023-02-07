@@ -1,0 +1,27 @@
+:root {
+    --rows: 3; 
+    --cols: 10;
+}
+
+#grid {
+    display: grid;
+    width: 100%;
+    padding: 4vw;
+    
+    grid-template-columns: repeat(var(--cols), 1fr);
+    gap: 0.5vw;
+
+    background: var(--color-box);
+}
+
+.cell {
+    width: 100%;
+    border-radius: 10%;
+    aspect-ratio: 1;
+    
+    background: var(--color-5);
+    font-size: 3vw;
+    
+    box-shadow: 0.2vw 0.2vw black;
+    user-select: none;
+}

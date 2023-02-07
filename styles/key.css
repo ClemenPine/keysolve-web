@@ -1,0 +1,19 @@
+.A, .E, .H, .I, .N, .O, .R, .S, .T {
+    background: var(--color-1);
+}
+
+.D, .L, .U {
+    background: var(--color-2);
+}
+
+.C, .F, .G, .M, .W, .Y {
+    background: var(--color-3);
+}
+
+.B, .P, .V, .\,, .\. {
+    background: var(--color-4);
+}
+
+.J, .K, .Q, .X, .Z, .\', .\;, .\/, .\- {
+    background: var(--color-5);
+}
