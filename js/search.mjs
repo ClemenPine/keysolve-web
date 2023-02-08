@@ -13,6 +13,15 @@ function unfocus() {
 }
 
 function change() {
+    let stored = {}
+    if ('layouts' in localStorage) {
+        stored = JSON.parse(localStorage.layouts)
+    }
+    
+    for (const name in stored) {
+        LAYOUTS[name] = stored[name]
+    }
+
     const input = document.getElementById('search')
     const layout = input.value.toLowerCase()
 

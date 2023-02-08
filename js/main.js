@@ -1,5 +1,6 @@
 import * as search from './search.mjs'
 import * as drag from './drag.mjs'
+import {LAYOUTS} from './layouts.mjs'
 
 window.onload = function() {
     search.init()
@@ -50,4 +51,29 @@ window.copy = function() {
     text = text.slice(0, -1)
 
     navigator.clipboard.writeText(text)
+}
+
+window.store = function() {
+    let layouts = {}
+
+    if ('layouts' in localStorage) {
+        const layouts = JSON.parse(localStorage.layouts)
+    }
+
+    const name = document.getElementById('search').value.toLowerCase()
+
+    if (name in LAYOUTS) {
+        alert(`The name "${name}" is already taken`)
+        return
+    }
+
+    const grid = document.getElementById('grid')
+
+    let letters = ''
+    for (const key of grid.children) {
+        letters += key.innerHTML.toLowerCase()
+    }
+    
+    layouts[name] = letters
+    localStorage.layouts = JSON.stringify(layouts);
 }
