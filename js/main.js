@@ -57,8 +57,7 @@ window.store = function() {
     let layouts = {}
 
     if ('layouts' in localStorage) {
-        const layouts = JSON.parse(localStorage.layouts)
-    }
+        layouts = JSON.parse(localStorage.layouts)
 
     const name = document.getElementById('search').value.toLowerCase()
 
@@ -73,7 +72,7 @@ window.store = function() {
     for (const key of grid.children) {
         letters += key.innerHTML.toLowerCase()
     }
-    
+
     layouts[name] = letters
     localStorage.layouts = JSON.stringify(layouts);
 }
