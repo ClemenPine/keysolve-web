@@ -1,10 +1,12 @@
 import * as search from './search.mjs'
 import * as drag from './drag.mjs'
+import * as board from './board.mjs'
 import {LAYOUTS} from './layouts.mjs'
 
 window.onload = function() {
     search.init()
     drag.init()
+    board.stagger()
 }
 
 window.theme = function(name) {
@@ -76,4 +78,15 @@ window.store = function() {
 
     layouts[name] = letters
     localStorage.layouts = JSON.stringify(layouts);
+}
+
+window.board = function(type) {
+    switch (type) {
+        case 'ortho':
+            board.ortho()
+            break
+        case 'stagger':
+            board.stagger()
+            break
+    }
 }
