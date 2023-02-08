@@ -52,7 +52,11 @@ button {
 }
 
 button:hover {
-    background: var(--color-1);
+    background: var(--color-3);
+}
+
+button:active {
+    background: var(--color-1)
 }
 
 .box {
