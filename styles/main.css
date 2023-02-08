@@ -5,7 +5,10 @@
 * { 
     -moz-box-sizing: border-box; 
     -webkit-box-sizing: border-box; 
-     box-sizing: border-box; 
+    box-sizing: border-box; 
+
+    color: var(--color-bg);
+    font-family: "Fira Code", monospace;
 }
 
 :root {
@@ -19,9 +22,6 @@ body {
     margin: 0;
     
     background: var(--color-bg);
-    color: var(--color-bg);
-
-    font-family: "Fira Code", monospace;
 }
 
 #canvas {
@@ -37,8 +37,22 @@ body {
     display: flex;
     justify-content: end;
     padding: 0 5vw;
-    
+
     gap: 0.5vw;
+}
+
+button {
+    border: none;
+    padding: 1vw;
+
+    background: var(--color-5);
+    font-size: 2vw;
+
+    transition: background-color 200ms;
+}
+
+button:hover {
+    background: var(--color-1);
 }
 
 .box {

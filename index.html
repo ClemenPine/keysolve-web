@@ -8,9 +8,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
 
+    <script src="https://kit.fontawesome.com/7cc1d241a9.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="styles/main.css">
     <link id="theme" rel="stylesheet" href="themes/synthwave.css">
+
     <script type="module" src="js/main.js"></script>
+    
     <script id="DragDropTouch" src="https://bernardo-castilho.github.io/DragDropTouch/DragDropTouch.js"></script>
 
     <title>KeySolve</title>
@@ -57,8 +61,14 @@
             </div>
         </div>
         <div id="toolbar">
-            <button onclick="copy()">Copy</button>
-            <button onclick="mirror()">Mirror</button>
+            <button onclick="copy()">
+                <i class="fa-solid fa-copy"></i>
+                Copy
+            </button>
+            <button onclick="mirror()">
+                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                Mirror
+            </button>
         </div>
     </div>
 </body>
