@@ -30,3 +30,24 @@ window.mirror = function() {
         }
     }
 }
+
+window.copy = function() {
+    const grid = document.getElementById('grid')
+    
+    let text = ''
+    let row = []
+
+    for (const key of grid.children) {
+        const letter = key.innerHTML.toLowerCase()
+        row.push(letter)
+
+        if (row.length == 10) {
+            text += row.join(' ') + '\n'
+            row = []
+        }
+    }
+
+    text = text.slice(0, -1)
+
+    navigator.clipboard.writeText(text)
+}

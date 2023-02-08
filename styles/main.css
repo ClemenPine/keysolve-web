@@ -33,6 +33,20 @@ body {
     justify-content: center;
 }
 
+#toolbar {
+    display: flex;
+    justify-content: end;
+    padding: 0 5vw;
+    
+    gap: 0.5vw;
+}
+
+.box {
+    margin: 1vw;
+
+    background: var(--color-box);
+}
+
 .center {
     display: flex;
     
