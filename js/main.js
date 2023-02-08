@@ -58,6 +58,7 @@ window.store = function() {
 
     if ('layouts' in localStorage) {
         layouts = JSON.parse(localStorage.layouts)
+    }
 
     const name = document.getElementById('search').value.toLowerCase()
 
