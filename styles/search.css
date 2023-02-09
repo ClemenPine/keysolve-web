@@ -10,7 +10,9 @@
     text-align: center;
     font-size: 3vw;
 
-    transition: background-color 300ms;
+    transition: 
+        background-color 300ms,
+        filter 100ms;
 }
 
 #search:focus {
@@ -20,7 +22,6 @@
 
 #search:hover {
     filter: brightness(120%);
-    transition: 100ms;
 }
 
 #complete {
