@@ -27,3 +27,8 @@
 
     transition: background-color 200ms;
 }
+
+.cell:hover {
+    filter: brightness(120%);
+    transition: 100ms;
+}
