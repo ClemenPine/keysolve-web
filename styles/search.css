@@ -18,6 +18,11 @@
     outline: none;
 }
 
+#search:hover {
+    filter: brightness(120%);
+    transition: 100ms;
+}
+
 #complete {
     position: absolute;
     top: 0;
