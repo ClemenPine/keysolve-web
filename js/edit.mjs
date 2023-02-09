@@ -9,6 +9,7 @@ export function init() {
     }
 
     editor.addEventListener('focusout', unfocus)
+    editor.addEventListener('input', change)
 }
 
 function edit(event) {
@@ -42,4 +43,13 @@ function unfocus() {
 
     editor.value = ''
     editor.hidden = true
+}
+
+function change() {
+    const editor = document.getElementById('editor')
+
+    if (editor.value) {
+        console.log(editor.value)
+        editor.value = editor.value.slice(-1)
+    }
 }
