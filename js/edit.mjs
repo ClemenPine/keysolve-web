@@ -17,8 +17,6 @@ function edit(event) {
 
     const editor = document.getElementById('editor')
     
-    console.log(target.clientWidth)
-
     const rect = target.getBoundingClientRect()
 
     editor.style.width = `${target.clientWidth}px`
