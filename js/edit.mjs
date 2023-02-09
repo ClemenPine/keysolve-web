@@ -49,7 +49,6 @@ function change() {
     const editor = document.getElementById('editor')
 
     if (editor.value) {
-        console.log(editor.value)
         editor.value = editor.value.slice(-1)
     }
 }
