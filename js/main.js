@@ -98,3 +98,13 @@ window.board = function() {
             break
     }
 }
+
+window.heatmap = function() {
+    const repeatmap = document.getElementById('repeatmap')
+
+    if (repeatmap.disabled) {
+        repeatmap.removeAttribute('disabled')
+    } else {
+        repeatmap.setAttribute('disabled', '')
+    }
+}
