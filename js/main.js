@@ -3,6 +3,8 @@ import * as drag from './drag.mjs'
 import * as board from './board.mjs'
 import {LAYOUTS} from './layouts.mjs'
 
+let board_type = 'stagger'
+
 window.onload = function() {
     search.init()
     drag.init()
@@ -80,13 +82,15 @@ window.store = function() {
     localStorage.layouts = JSON.stringify(layouts);
 }
 
-window.board = function(type) {
-    switch (type) {
-        case 'ortho':
-            board.ortho()
-            break
+window.board = function() {
+    switch (board_type) {
         case 'stagger':
+            board.ortho()
+            board_type = 'ortho'
+            break
+        case 'ortho':
             board.stagger()
+            board_type = 'stagger'
             break
     }
 }
