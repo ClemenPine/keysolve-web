@@ -1,6 +1,8 @@
 import * as search from './search.mjs'
 import * as drag from './drag.mjs'
 import * as board from './board.mjs'
+import * as edit from './edit.mjs'
+
 import {LAYOUTS} from './layouts.mjs'
 
 let board_type = 'stagger'
@@ -8,6 +10,8 @@ let board_type = 'stagger'
 window.onload = function() {
     search.init()
     drag.init()
+    edit.init()
+
     board.stagger()
 }
 
