@@ -8,7 +8,7 @@
     background: var(--color-1);
 
     text-align: center;
-    font-size: 3vw;
+    font-size: calc(var(--size) * 3);
 
     transition: 
         background-color 300ms,
@@ -35,7 +35,7 @@
     
     color: gray;
 
-    font-size: 3vw;
+    font-size: calc(var(--size) * 3);
     text-align: center;
     white-space: pre;
 }
@@ -43,5 +43,5 @@
 #search-wrapper {
     position: relative;
 
-    height: 4vw;
+    height: calc(var(--size) * 4);
 }

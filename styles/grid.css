@@ -1,15 +1,16 @@
 :root {
     --rows: 3; 
     --cols: 10;
+    --pad: calc((100vw - 166vh) / 2);
 }
 
 #grid {
     display: grid;
-    width: 100%;
-    padding: 4vw;
-    
+    margin: calc(var(--size) * 4);
+    padding: 0px var(--pad);
+
     grid-template-columns: repeat(var(--cols), 1fr);
-    gap: 0.5vw;
+    gap: calc(var(--size) / 2);
 
     background: var(--color-box);
 }
@@ -20,9 +21,9 @@
     aspect-ratio: 1;
     
     background: var(--color-5);
-    font-size: 3vw;
-    
-    box-shadow: 0.2vw 0.2vw black;
+    font-size: calc(var(--size) * 3);
+
+    box-shadow: calc(var(--size) / 5) calc(var(--size) / 5) black;
     user-select: none;
 
     transition: 

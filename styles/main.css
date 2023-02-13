@@ -15,6 +15,8 @@
     --color-box: rgb(62, 62, 62);
     --color-bg: rgb(39, 39, 39);
     --color-light: rgb(232, 232, 232);
+
+    --size: min(1vw, 1.66vh);
 }
 
 body {
@@ -26,8 +28,8 @@ body {
 
 #canvas {
     display: flex;
-    margin: 0px 4vw;
     height: 100%;
+    margin: 0px calc(var(--size) * 4);
 
     flex-direction: column;
     justify-content: center;
@@ -36,17 +38,17 @@ body {
 #toolbar {
     display: flex;
     justify-content: end;
-    padding: 0 5vw;
+    padding: 0 calc(var(--size) * 5);
 
-    gap: 0.5vw;
+    gap: calc(var(--size) / 2);
 }
 
 button {
     border: none;
-    padding: 1vw;
+    padding: var(--size);
 
     background: var(--color-5);
-    font-size: 2vw;
+    font-size: calc(var(--size) * 2);
 
     transition: background-color 200ms;
 }
@@ -60,7 +62,7 @@ button:active {
 }
 
 .box {
-    margin: 1vw;
+    margin: calc(var(--size) * 1);
 
     background: var(--color-box);
 }
@@ -75,13 +77,17 @@ button:active {
 #editor {
     position: absolute;
     top: 0;
-
+    
     border: none;
     aspect-ratio: 1;
-
+    
     background: none;
-    font-size: 3vw;
+    font-size: calc(var(--size) * 3);
     text-align: center;
-
+    
     outline: none;
+}
+
+[hidden] {
+    display: none !important;
 }

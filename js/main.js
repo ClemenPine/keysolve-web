@@ -2,6 +2,7 @@ import * as search from './search.mjs'
 import * as drag from './drag.mjs'
 import * as board from './board.mjs'
 import * as edit from './edit.mjs'
+import * as stats from './stats.mjs'
 
 import {LAYOUTS} from './layouts.mjs'
 
@@ -11,8 +12,17 @@ window.onload = function() {
     search.init()
     drag.init()
     edit.init()
+    stats.init()
+  
+    window.board()
+    window.board()
+}
 
-    board.stagger()
+
+
+window.stats = function() {
+    // const res = stats.analyze()
+    // console.log(res)
 }
 
 window.theme = function(name) {
