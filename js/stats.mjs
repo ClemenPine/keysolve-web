@@ -41,6 +41,12 @@ export function analyze() {
 
         for (const [gram, count] of Object.entries(grams)) {
             const key = [...gram].map(x => layout[x])
+            total += count
+            
+            if (key.indexOf(undefined) !== -1) {
+                continue
+            }
+            
             const stats = classify(key)
 
             for (let stat of stats) {
@@ -49,8 +55,6 @@ export function analyze() {
                 curr[stat] ??= 0
                 curr[stat] += count
             }
-
-            total += count
         }
 
         for (const [stat, count] of Object.entries(curr)) {
