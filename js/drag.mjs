@@ -26,4 +26,6 @@ function drop(event) {
 
     dragged.className = `cell center ${temp}`
     dragged.innerHTML = temp
+
+    window.stats()
 }

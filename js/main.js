@@ -7,8 +7,9 @@ import * as stats from './stats.mjs'
 import {LAYOUTS} from './layouts.mjs'
 
 let board_type = 'stagger'
+let base = {}
 
-window.onload = function() {
+window.onload = async function() {
     search.init()
     drag.init()
     edit.init()
@@ -16,13 +17,29 @@ window.onload = function() {
   
     window.board()
     window.board()
+
+    base = await (await fetch('percentiles.json')).json()
 }
 
-
-
 window.stats = function() {
-    // const res = stats.analyze()
-    // console.log(res)
+    const res = stats.analyze()
+
+    for (const [stat, freq] of Object.entries(res)) {
+        const cell = document.getElementById(stat)
+        const perc = freq.toLocaleString(
+            undefined,{style: 'percent', minimumFractionDigits:2}
+        )
+
+        let color = ''
+        for (let i=0; i < 5; i++) {
+            if (freq > base[stat][i]) {
+                color = `var(--color-${4-i})`
+            }
+        }
+
+        cell.innerHTML = `${stat}: ${perc}`
+        cell.style.background = color
+    } 
 }
 
 window.theme = function(name) {

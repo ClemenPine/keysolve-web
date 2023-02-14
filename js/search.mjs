@@ -4,7 +4,6 @@ export function init() {
     const input = document.getElementById('search')
     input.addEventListener("input", change)
     input.addEventListener("focusout", unfocus)
-
 }
 
 function unfocus() {
@@ -65,4 +64,6 @@ function change() {
         key.className = `cell center ${letter}`
         key.innerHTML = letter
     }
+
+    window.stats()
 }
