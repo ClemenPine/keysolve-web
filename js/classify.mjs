@@ -115,6 +115,7 @@ function trigrams(key) {
 
     if (
         new Set(key.map(x => hand(x))).size == 2 &&
+        new Set(key.map(x => finger(x))).size == 3 &&
         hand(key[0]) != hand(key[2])
     ) {
         buckets.push('ROL')
