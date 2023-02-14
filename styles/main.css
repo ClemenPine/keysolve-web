@@ -1,6 +1,7 @@
 @import 'grid.css';
 @import 'key.css';
 @import 'search.css';
+@import 'table.css';
 
 * { 
     -moz-box-sizing: border-box; 
@@ -19,27 +20,11 @@
     --size: min(1vw, 1.66vh);
 }
 
-table {
-    width: 98%;
-}
-
-td {
-    text-align: center;
-
-    background: var(--color-5);
-    font-size: calc(var(--size) * 2);
-}
-
 body {
     height: 100vh;
     margin: 0;
     
     background: var(--color-bg);
-}
-
-table {
-    margin: calc(var(--size) * 1);
-    user-select: none;
 }
 
 #canvas {

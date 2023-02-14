@@ -1,17 +1,20 @@
-import {classify} from './classify.mjs'
+import {classify, FINGER_MAP} from './classify.mjs'
 
+const FINGERS = ['LP', 'LR', 'LM', 'LI', 'LT', 'RT', 'RI', 'RM', 'RR', 'RP']
+
+let MONOGRAMS = null
 let BIGRAMS = null
 let SKIPGRAMS = null
 let TRIGRAMS = null
 
 export async function init() {
+    MONOGRAMS = await (await fetch('corpora/monograms.json')).json()
     BIGRAMS = await (await fetch('corpora/bigrams.json')).json()
     SKIPGRAMS = await (await fetch('corpora/skipgrams.json')).json()
     TRIGRAMS = await (await fetch('corpora/trigrams.json')).json()
 }
 
 export function analyze() {
-
     const keys = document.getElementById('grid').children
     
     const layout = {}
@@ -61,6 +64,28 @@ export function analyze() {
             res[stat] = count / total
         }
     }
+
+    let curr = {}
+    let total = 0
+
+    for (const [gram, count] of Object.entries(MONOGRAMS)) {
+        const finger = FINGERS[FINGER_MAP[layout[gram]]]
+
+        if (finger === undefined) {
+            continue
+        }
+
+        curr[finger] ??= 0
+        curr[finger] += count
+        total += count
+    }
+
+    for (const [stat, count] of Object.entries(curr)) {
+        res[stat] = count / total
+    }
+
+    res['LH'] = ['LI', 'LM', 'LR', 'LP'].reduce((sum, x) => sum + res[x], 0)
+    res['RH'] = ['RI', 'RM', 'RR', 'RP'].reduce((sum, x) => sum + res[x], 0)
 
     return res
 }

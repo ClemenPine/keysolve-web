@@ -61,37 +61,64 @@
                 <div draggable="true" class="cell center '">'</div>
             </div>
         </div>
-        <div class="box center">
-        <table>
-            <tbody>
-                <tr>
-                    <td>BIGRAMS</td>
-                    <td id="SFB" style="background: var(--color-2);">SFB: 1.50%</td>
-                    <td id="LSB" style="background: var(--color-1);">LSB: 3.84%</td>
-                    <td id="HSB" style="background: var(--color-2);">HSB: 6.07%</td>
-                    <td id="FSB" style="background: var(--color-3);">FSB: 0.37%</td>
-                </tr>
-                <tr>
-                    <td>SKIPGRAMS</td>
-                    <td id="SFS" style="background: var(--color-1);">SFS: 8.17%</td>
-                    <td id="LSS" style="background: var(--color-2);">LSS: 2.59%</td>
-                    <td id="HSS" style="background: var(--color-4);">HSS: 6.49%</td>
-                    <td id="FSS" style="background: var(--color-3);">FSS: 0.69%</td>
-                </tr>
-                <tr>
-                    <td>TRIGRAMS</td>
-                    <td id="ALT" style="background: var(--color-4);">ALT: 28.25%</td>
-                    <td id="ROL" style="background: var(--color-2);">ROL: 43.82%</td>
-                    <td id="ONE" style="background: var(--color-3);">ONE: 2.54%</td>
-                    <td id="RED" style="background: var(--color-1);">RED: 6.84%</td>
-                </tr>
-            </tbody>       
-        </table> 
+        <div id="table-wrapper" class="box center">
+            <table id="ngrams">
+                <tbody>
+                    <tr>
+                        <td>BIGRAMS</td>
+                        <td id="SFB" style="background: var(--color-2);">SFB: 1.50%</td>
+                        <td id="LSB" style="background: var(--color-1);">LSB: 3.84%</td>
+                        <td id="HSB" style="background: var(--color-2);">HSB: 6.07%</td>
+                        <td id="FSB" style="background: var(--color-3);">FSB: 0.37%</td>
+                    </tr>
+                    <tr>
+                        <td>SKIPGRAMS</td>
+                        <td id="SFS" style="background: var(--color-1);">SFS: 8.17%</td>
+                        <td id="LSS" style="background: var(--color-2);">LSS: 2.59%</td>
+                        <td id="HSS" style="background: var(--color-4);">HSS: 6.49%</td>
+                        <td id="FSS" style="background: var(--color-3);">FSS: 0.69%</td>
+                    </tr>
+                    <tr>
+                        <td>TRIGRAMS</td>
+                        <td id="ALT" style="background: var(--color-4);">ALT: 28.25%</td>
+                        <td id="ROL" style="background: var(--color-2);">ROL: 43.82%</td>
+                        <td id="ONE" style="background: var(--color-3);">ONE: 2.54%</td>
+                        <td id="RED" style="background: var(--color-1);">RED: 6.84%</td>
+                    </tr>
+                </tbody>       
+            </table> 
+            <table id="use" hidden>
+                <tbody>
+                    <tr>
+                        <td>LEFT</td>
+                        <td id="LI" style="background: var(--color-1);">LI: 18.67%</td>
+                        <td id="LM" style="background: var(--color-4);">LM: 10.11%</td>
+                        <td id="LR" style="">LR: 7.78%</td>
+                        <td id="LP" style="background: var(--color-3);">LP: 7.57%</td>
+                    </tr>
+                    <tr>
+                        <td>RIGHT</td>
+                        <td id="RI" style="background: var(--color-1);">RI: 19.85%</td>
+                        <td id="RM" style="background: var(--color-2);">RM: 16.78%</td>
+                        <td id="RR" style="background: var(--color-4);">RR: 10.39%</td>
+                        <td id="RP" style="background: var(--color-2);">RP: 8.86%</td>
+                    </tr>
+                    <tr>
+                        <td>TOTAL</td>
+                        <td id="LH" style="background: var(--color-4);">LH: 44.12%</td>
+                        <td id="RH" style="background: var(--color-1);">RH: 55.88%</td>
+                    </tr>
+                </tbody>             
+            </table> 
         </div>
         <div id="toolbar">
             <button onclick="copy()">
                 <i class="fa-solid fa-copy"></i>
                 Copy
+            </button>
+            <button onclick="toggle()">
+                <i class="fa-solid fa-chart-simple"></i>
+                Stats
             </button>
             <button onclick="mirror()">
                 <i class="fa-solid fa-arrow-right-arrow-left"></i>
