@@ -54,6 +54,7 @@ function bigrams(key) {
         key[0] != key[1]
     ) {
         buckets.push('SF')
+        return buckets
     }
     
     if (
