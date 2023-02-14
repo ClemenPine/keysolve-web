@@ -82,6 +82,8 @@ window.mirror = function() {
             key.innerHTML = letter
         }
     }
+
+    window.stats()
 }
 
 window.copy = function() {
