@@ -23,6 +23,11 @@ window.onload = async function() {
     base = await (await fetch('percentiles.json')).json()
 }
 
+window.info = function() {
+    const url = 'https://github.com/ClemenPine/keysolve-web'
+    window.open(url, '_blank')
+}
+
 window.toggle = function() {
     const ngrams = document.getElementById('ngrams')
     const use = document.getElementById('use')
