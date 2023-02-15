@@ -1,5 +1,7 @@
 # KeySolve
 
+![Keysolve](keysolve.png)
+
 ## How to Use
 
 **Search**  
