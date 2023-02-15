@@ -8,15 +8,15 @@
     -webkit-box-sizing: border-box; 
     box-sizing: border-box; 
 
-    color: var(--color-bg);
     font-family: "Fira Code", monospace;
+    color: var(--color-bg);
 }
 
 :root {
     --color-box: rgb(62, 62, 62);
     --color-bg: rgb(39, 39, 39);
     --color-light: rgb(232, 232, 232);
-
+    
     --size: min(1vw, 1.66vh);
 }
 
@@ -44,7 +44,7 @@ body {
     gap: calc(var(--size) / 2);
 }
 
-button {
+.button {
     border: none;
     padding: var(--size);
 
@@ -54,11 +54,11 @@ button {
     transition: background-color 200ms;
 }
 
-button:hover {
+.button:hover {
     background: var(--color-3);
 }
 
-button:active {
+.button:active {
     background: var(--color-1)
 }
 
@@ -73,6 +73,36 @@ button:active {
     
     align-items: center;
     justify-content: center;
+}
+
+#pop-ups {
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.171);
+}
+
+#settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: calc(var(--size) * 3);
+    gap: calc(var(--size) * 2);
+
+    border: calc(var(--size) * 1) solid var(--color-1);
+    background: var(--color-light);
+
+    opacity: 95%;
+}
+
+textarea {
+    width: 100%;
+    height: calc(var(--size) * 10);
+
+    resize: none;
 }
 
 #editor {

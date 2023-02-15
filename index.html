@@ -112,25 +112,35 @@
             </table> 
         </div>
         <div id="toolbar">
-            <button onclick="copy()">
-                <i class="fa-solid fa-copy"></i>
-                Copy
-            </button>
-            <button onclick="toggle()">
+            <button class="button" onclick="toggle()">
                 <i class="fa-solid fa-chart-simple"></i>
                 Stats
             </button>
-            <button onclick="mirror()">
+            <button class="button" onclick="mirror()">
                 <i class="fa-solid fa-arrow-right-arrow-left"></i>
                 Mirror
             </button>
-            <button onclick="board()">
+            <button class="button" onclick="board()">
                 <i class="fa-solid fa-keyboard"></i>
                 Board
+            </button>
+            <button class="button" onclick="settings()">
+                <i class="fa-solid fa-gear"></i>
             </button>
         </div>
     </div>
     <input id="editor" hidden=true>
+    <div id="pop-ups" class="center" hidden>
+        <div id="settings">
+            <div>
+                <hi>Layout Editor</hi>
+                <textarea id="matrix"></textarea>
+                <div>
+                    <button onclick="copy()">Copy</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 

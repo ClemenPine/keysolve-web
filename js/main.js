@@ -3,6 +3,7 @@ import * as drag from './drag.mjs'
 import * as board from './board.mjs'
 import * as edit from './edit.mjs'
 import * as stats from './stats.mjs'
+import * as settings from './settings.mjs'
 
 import {LAYOUTS} from './layouts.mjs'
 
@@ -14,6 +15,7 @@ window.onload = async function() {
     drag.init()
     edit.init()
     stats.init()
+    settings.init()
   
     window.board()
     window.board()
@@ -87,24 +89,12 @@ window.mirror = function() {
 }
 
 window.copy = function() {
-    const grid = document.getElementById('grid')
-    
-    let text = ''
-    let row = []
+    const matrix = document.getElementById('matrix')
+    navigator.clipboard.writeText(matrix.value)
+}
 
-    for (const key of grid.children) {
-        const letter = key.innerHTML.toLowerCase()
-        row.push(letter)
-
-        if (row.length == 10) {
-            text += row.join(' ') + '\n'
-            row = []
-        }
-    }
-
-    text = text.slice(0, -1)
-
-    navigator.clipboard.writeText(text)
+window.settings = function() {
+    settings.open()
 }
 
 window.store = function() {
