@@ -9,6 +9,8 @@
 
     text-align: center;
     font-size: calc(var(--size) * 3);
+    border-top-left-radius: calc(var(--size) * .6);
+    border-top-right-radius: calc(var(--size) * .6);
 
     transition: 
         background-color 300ms,

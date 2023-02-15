@@ -50,6 +50,7 @@ body {
 
     background: var(--color-5);
     font-size: calc(var(--size) * 2);
+    border-radius: calc(var(--size) * .6);
 
     transition: background-color 200ms;
 }
@@ -66,6 +67,7 @@ body {
     margin: calc(var(--size) * 1);
 
     background: var(--color-box);
+    border-radius: calc(var(--size) * .6);
 }
 
 .center {
@@ -93,6 +95,7 @@ body {
     gap: calc(var(--size) * 2);
 
     border: calc(var(--size) * 1) solid var(--color-1);
+    border-radius: calc(var(--size) * .6);
     background: var(--color-light);
 
     opacity: 95%;
