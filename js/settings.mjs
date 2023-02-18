@@ -14,15 +14,14 @@ export function init() {
 }
 
 export function open() {
-    const grid = document.getElementById('grid')
     const popups = document.getElementById('pop-ups')
     const textarea = document.getElementById('matrix')
     
     let text = ''
     let row = []
-    
-    for (const key of grid.children) {
-        const letter = key.innerHTML.toLowerCase()
+
+    const layout = board.layout()
+    for (const letter of layout) {
         row.push(letter)
         
         if (row.length == 10) {

@@ -3,6 +3,10 @@ let dragged = null
 export function init() {
     const grid = document.getElementById('grid')
     for (const key of grid.children) {
+        if (!(key.classList.contains('cell'))) {
+            continue
+        }
+
         key.addEventListener('dragstart', drag)
         key.addEventListener('dragover', allow_drop)
         key.addEventListener('drop', drop)

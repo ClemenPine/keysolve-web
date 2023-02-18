@@ -1,11 +1,8 @@
 import * as search from './search.mjs'
 import * as drag from './drag.mjs'
 import * as board from './board.mjs'
-import * as edit from './edit.mjs'
 import * as stats from './stats.mjs'
 import * as settings from './settings.mjs'
-
-import {LAYOUTS} from './layouts.mjs'
 
 let base = {}
 

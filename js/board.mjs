@@ -3,13 +3,32 @@ import * as drag from './drag.mjs'
 export let board = 'stagger'
 
 export function layout() {
-    
+    const grid = document.getElementById('grid')
+    let layout = ''
+
+    for (const key of grid.children) {
+        if (key.classList.contains('empty')) {
+            continue
+        }
+
+        layout += key.innerHTML.toLowerCase()
+    }
+
+    return layout
 }
 
 export function update(layout) {
     grid.innerHTML = ''
 
     for (let i=0; i < layout.length; i++) {
+        if (i == 30) {
+            for (let j=0; j < 6; j++) {
+                const filler = document.createElement('div')
+                filler.className = 'empty'
+                grid.appendChild(filler)
+            }
+        }
+
         const letter = layout[i].toUpperCase()
 
         const key = document.createElement('div')
@@ -40,6 +59,8 @@ export function stagger() {
             style = 'calc(var(--size) * -1)'
         } else if (i < 30) {
             style = 'calc(var(--size) * 3)'
+        } else {
+            style = 'calc(var(--size) * -1)'
         }
         
         keys[i].style.marginLeft = style

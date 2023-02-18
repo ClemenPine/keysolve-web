@@ -1,3 +1,4 @@
+import * as board from './board.mjs'
 import {classify, FINGER_MAP} from './classify.mjs'
 
 const FINGERS = ['LP', 'LR', 'LM', 'LI', 'LT', 'RT', 'RI', 'RM', 'RR', 'RP']
@@ -15,12 +16,11 @@ export async function init() {
 }
 
 export function analyze() {
-    const keys = document.getElementById('grid').children
-    
+    const letters = board.layout()
     const layout = {}
-    for (let i=0; i < keys.length; i++) {
-        const letter = keys[i].innerHTML
-        layout[letter.toLowerCase()] = i
+
+    for (let i=0; i < letters.length; i++) {
+        layout[letters[i]] = i
     }
 
     const res = {}
