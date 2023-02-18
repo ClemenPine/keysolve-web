@@ -49,5 +49,6 @@ function matrix_change() {
     )
 
     layout = layout.padEnd(30)
+    layout = layout.slice(0, 33)
     board.update(layout)
 }
