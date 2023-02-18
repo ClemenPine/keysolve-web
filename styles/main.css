@@ -17,7 +17,7 @@
     --color-bg: rgb(39, 39, 39);
     --color-light: rgb(232, 232, 232);
     
-    --size: min(1vw, 1.66vh);
+    --size: min(1vw, 1.25vh);
 }
 
 body {

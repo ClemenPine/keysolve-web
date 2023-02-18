@@ -84,8 +84,8 @@ export function analyze() {
         res[stat] = count / total
     }
 
-    res['LH'] = ['LI', 'LM', 'LR', 'LP'].reduce((sum, x) => sum + res[x], 0)
-    res['RH'] = ['RI', 'RM', 'RR', 'RP'].reduce((sum, x) => sum + res[x], 0)
+    res['LH'] = ['LI', 'LM', 'LR', 'LP', 'LT'].reduce((sum, x) => sum + (res[x] ?? 0), 0)
+    res['RH'] = ['RI', 'RM', 'RR', 'RP', 'RT'].reduce((sum, x) => sum + (res[x] ?? 0), 0)
 
     return res
 }

@@ -2,6 +2,7 @@ export const FINGER_MAP = [
     0, 1, 2, 3, 3, 6, 6, 7, 8, 9,
     0, 1, 2, 3, 3, 6, 6, 7, 8, 9,
     0, 1, 2, 3, 3, 6, 6, 7, 8, 9,
+    5, 5, 5
 ]
 
 function finger(idx) {
@@ -9,10 +10,18 @@ function finger(idx) {
 }
 
 function column(idx) {
+    if (idx >= 30) {
+        return 0
+    } 
+    
     return idx % 10
 }
 
 function hand(idx) {
+    if (idx >= 30) {
+        return 1
+    } 
+
     if (idx % 10 < 5) {
         return 0
     } else {

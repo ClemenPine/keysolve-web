@@ -7,7 +7,6 @@ import * as settings from './settings.mjs'
 
 import {LAYOUTS} from './layouts.mjs'
 
-let board_type = 'stagger'
 let base = {}
 
 window.onload = async function() {
@@ -16,9 +15,8 @@ window.onload = async function() {
     edit.init()
     stats.init()
     settings.init()
-  
-    window.board()
-    window.board()
+
+    board.stagger()
 
     base = await (await fetch('percentiles.json')).json()
 }
@@ -53,6 +51,10 @@ window.stats = function() {
         const perc = freq.toLocaleString(
             undefined,{style: 'percent', minimumFractionDigits:2}
         )
+
+        if (!(stat in base)) {
+            continue
+        }
 
         let color = ''
         for (let i=0; i < 5; i++) {
@@ -128,16 +130,14 @@ window.store = function() {
 }
 
 window.board = function() {
-    switch (board_type) {
+    switch (board.board) {
         case 'stagger':
             board.ortho()
-            board_type = 'ortho'
             break
         case 'ortho':
             board.stagger()
-            board_type = 'stagger'
             break
-    }
+        }
 }
 
 window.heatmap = function() {

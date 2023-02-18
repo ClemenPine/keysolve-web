@@ -1,3 +1,6 @@
+import * as board from './board.mjs'
+import * as drag from './drag.mjs'
+
 export function init() {
     const popups = document.getElementById('pop-ups')
     const matrix = document.getElementById('matrix')
@@ -28,7 +31,8 @@ export function open() {
             row = []
         }
     }
-    
+
+    text += row.join(' ') + '\n'
     text = text.slice(0, -1)
     textarea.value = text
 
@@ -36,7 +40,7 @@ export function open() {
 }
 
 function matrix_change() {
-    const keys = document.getElementById('grid').children
+    const grid = document.getElementById('grid')
     const matrix = document.getElementById('matrix')
 
     const lines = matrix.value.split('\n')
@@ -48,14 +52,23 @@ function matrix_change() {
 
     layout = layout.padEnd(30)
 
-
-    for (let i=0; i < keys.length; i++) {
+    grid.innerHTML = ''
+    for (let i=0; i < layout.length; i++) {
         const letter = layout[i].toUpperCase()
-        const key = keys[i]
 
+        const key = document.createElement('div')
         key.className = `cell center ${letter}`
         key.innerHTML = letter
+
+        key.setAttribute('draggable', 'true')
+        grid.appendChild(key)
     }
+
+    if (board.board == 'stagger') {
+        board.stagger()
+    }
+
+    drag.init()
 
     window.stats()
 }

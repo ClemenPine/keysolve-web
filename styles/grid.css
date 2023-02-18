@@ -1,12 +1,12 @@
 :root {
     --rows: 3; 
     --cols: 10;
-    --pad: calc((100vw - 166vh) / 2);
+    --pad: calc((100vw - 125vh) / 2);
 }
 
 #grid {
     display: grid;
-    margin: calc(var(--size) * 4);
+    margin: calc(var(--size) * 4) calc(var(--size) * 7);
     padding: 0px var(--pad);
 
     grid-template-columns: repeat(var(--cols), 1fr);
