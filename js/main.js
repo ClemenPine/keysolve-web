@@ -82,6 +82,8 @@ window.mirror = function() {
         letters.push(key.innerHTML)
     }
 
+    letters = letters.slice(0, 30)
+
     for (let row=0; row < 3; row++) {
         for (let col=0; col < 10; col++) {
             const key = keys[(2-row)*10 + col]
