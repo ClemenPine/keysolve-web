@@ -1,5 +1,4 @@
 import * as board from './board.mjs'
-import * as drag from './drag.mjs'
 import {LAYOUTS} from './layouts.mjs'
 
 export function init() {
@@ -57,23 +56,5 @@ function change() {
     }
 
     const matrix = LAYOUTS[layout]
-    grid.innerHTML = ''
-
-    for (let i=0; i < matrix.length; i++) {
-        const letter = matrix[i].toUpperCase()
-
-        const key = document.createElement('div')
-        key.className = `cell center ${letter}`
-        key.innerHTML = letter
-
-        key.setAttribute('draggable', 'true')
-        grid.appendChild(key)
-    }
-
-    if (board.board == 'stagger') {
-        board.stagger()
-    }
-
-    drag.init()
-    window.stats()
+    board.update(matrix)
 }

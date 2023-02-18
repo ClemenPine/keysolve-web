@@ -12,7 +12,6 @@ let base = {}
 window.onload = async function() {
     search.init()
     drag.init()
-    edit.init()
     stats.init()
     settings.init()
 
@@ -104,31 +103,6 @@ window.copy = function() {
 
 window.settings = function() {
     settings.open()
-}
-
-window.store = function() {
-    let layouts = {}
-
-    if ('layouts' in localStorage) {
-        layouts = JSON.parse(localStorage.layouts)
-    }
-
-    const name = document.getElementById('search').value.toLowerCase()
-
-    if (name in LAYOUTS) {
-        alert(`The name "${name}" is already taken`)
-        return
-    }
-
-    const grid = document.getElementById('grid')
-
-    let letters = ''
-    for (const key of grid.children) {
-        letters += key.innerHTML.toLowerCase()
-    }
-
-    layouts[name] = letters
-    localStorage.layouts = JSON.stringify(layouts);
 }
 
 window.board = function() {
