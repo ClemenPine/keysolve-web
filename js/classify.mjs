@@ -1,9 +1,28 @@
-export const FINGER_MAP = [
+export const STANDARD = [
     0, 1, 2, 3, 3, 6, 6, 7, 8, 9,
     0, 1, 2, 3, 3, 6, 6, 7, 8, 9,
     0, 1, 2, 3, 3, 6, 6, 7, 8, 9,
     5, 5, 5
 ]
+
+export const ANGLE = [
+    0, 1, 2, 3, 3, 6, 6, 7, 8, 9,
+    0, 1, 2, 3, 3, 6, 6, 7, 8, 9,
+    1, 2, 3, 3, 3, 6, 6, 7, 8, 9,
+    5, 5, 5
+]
+
+export let FINGER_MAP = STANDARD
+
+export function angle(bool) {
+    if (bool) {
+        FINGER_MAP = ANGLE
+    } else {
+        FINGER_MAP = STANDARD
+    }
+
+    console.log(`angle: ${bool}`)
+}
 
 function finger(idx) {
     return FINGER_MAP[idx]

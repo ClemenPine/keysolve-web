@@ -28,6 +28,10 @@ export function open() {
             text += row.join(' ') + '\n'
             row = []
         }
+
+        if (text.length == 40 && board.angle) {
+            text += ' '
+        }
     }
 
     text += row.join(' ') + '\n'
@@ -38,7 +42,6 @@ export function open() {
 }
 
 function matrix_change() {
-    const grid = document.getElementById('grid')
     const matrix = document.getElementById('matrix')
 
     const lines = matrix.value.split('\n')
@@ -50,5 +53,12 @@ function matrix_change() {
 
     layout = layout.padEnd(30)
     layout = layout.slice(0, 33)
+
+    const angle_bool = (
+        lines[2].length - lines[2].trimStart().length >
+        lines[1].length - lines[1].trimStart().length
+    )
+
+    board.set_angle(angle_bool)
     board.update(layout)
 }

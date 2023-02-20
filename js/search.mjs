@@ -1,5 +1,6 @@
 import * as board from './board.mjs'
 import {LAYOUTS} from './layouts.mjs'
+import {ANGLES} from './angles.mjs'
 
 export function init() {
     const input = document.getElementById('search')
@@ -56,5 +57,8 @@ function change() {
     }
 
     const matrix = LAYOUTS[layout]
+    const angle_bool = ANGLES.includes(layout)
+
+    board.set_angle(angle_bool)
     board.update(matrix)
 }

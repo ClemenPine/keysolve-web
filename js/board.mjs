@@ -1,6 +1,13 @@
 import * as drag from './drag.mjs'
+import * as classify from './classify.mjs'
 
 export let board = 'stagger'
+export let angle = false
+
+export function set_angle(bool) {
+    angle = bool
+    classify.angle(bool)
+}
 
 export function layout() {
     const grid = document.getElementById('grid')
