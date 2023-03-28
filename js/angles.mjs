@@ -28,5 +28,6 @@ export const ANGLES = [
     "gallium_but_good",
     "middlephobia_angle",
     "sturdy-index-only-angle-mod",
-    "colemak-dh-with-a-kgvx-cycle-and-some-rearranged-punctuation"
+    "colemak-dh-with-a-kgvx-cycle-and-some-rearranged-punctuation",
+    "gallaya_angle"
 ]
