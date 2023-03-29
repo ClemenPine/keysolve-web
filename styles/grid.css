@@ -23,7 +23,7 @@
     background: var(--color-5);
     font-size: calc(var(--size) * 3);
 
-    box-shadow: calc(var(--size) / 5) calc(var(--size) / 5) black;
+    box-shadow: calc(var(--size) / 5) calc(var(--size) / 5) var(--color-shadow);
     user-select: none;
 
     transition: 

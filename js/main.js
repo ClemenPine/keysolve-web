@@ -4,6 +4,7 @@ import * as board from './board.mjs'
 import * as disable from './disable.mjs'
 import * as stats from './stats.mjs'
 import * as settings from './settings.mjs'
+import * as themes from './themes.mjs'
 
 let base = {}
 
@@ -13,6 +14,7 @@ window.onload = async function() {
     disable.init()
     stats.init()
     settings.init()
+    themes.init()
 
     board.stagger()
 
@@ -22,6 +24,17 @@ window.onload = async function() {
 window.info = function() {
     const url = 'https://github.com/ClemenPine/keysolve-web'
     window.open(url, '_blank')
+}
+
+window.prev = function(prevalence) {
+    let color = prevalence * 30 + Math.log(prevalence * 120 + 1);
+    let base = 95;
+
+    let r = Math.round(base * 0.9 + color * 18);
+    let g = Math.round(base * 1.3 - color * 10);
+    let b = Math.round(base * 1.325 - color * 10);
+
+    return `#${Number(r).toString(16)}${Number(g).toString(16)}${Number(b).toString(16)}`
 }
 
 window.toggle = function() {
@@ -47,7 +60,7 @@ window.stats = function() {
     for (const [stat, freq] of Object.entries(res)) {
         const cell = document.getElementById(stat)
         const perc = freq.toLocaleString(
-            undefined,{style: 'percent', minimumFractionDigits:2}
+            undefined, { style: 'percent', minimumFractionDigits:2 }
         )
 
         if (!(stat in base)) {

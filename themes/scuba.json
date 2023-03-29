@@ -1,0 +1,10 @@
+{
+    "--color-5": "#2758ab",
+    "--color-4": "#0089da",
+    "--color-3": "#00b7dd",
+    "--color-2": "#00dfb3",
+    "--color-1": "#6bff70",
+    "--color-search": "var(--color-1)",
+    "--color-text": "var(--color-bg)",
+    "--color-shadow": "black"
+}
