@@ -89,7 +89,7 @@ body {
 }
 
 .settings-text {
-    color: var(--color-bg);
+    color: rgb(39, 39, 39);
 }
 
 #settings {
