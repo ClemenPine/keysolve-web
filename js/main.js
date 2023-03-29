@@ -1,6 +1,7 @@
 import * as search from './search.mjs'
 import * as drag from './drag.mjs'
 import * as board from './board.mjs'
+import * as disable from './disable.mjs'
 import * as stats from './stats.mjs'
 import * as settings from './settings.mjs'
 
@@ -9,6 +10,7 @@ let base = {}
 window.onload = async function() {
     search.init()
     drag.init()
+    disable.init()
     stats.init()
     settings.init()
 

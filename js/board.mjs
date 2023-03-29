@@ -17,8 +17,12 @@ export function layout() {
         if (key.classList.contains('empty')) {
             continue
         }
-
-        layout += key.innerHTML.toLowerCase()
+        
+        if (key.classList.contains('excluded')) {
+            layout += '�'
+        } else {
+            layout += key.innerHTML.toLowerCase()
+        }
     }
 
     return layout
