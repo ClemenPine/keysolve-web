@@ -93,6 +93,30 @@ window.mirror = function() {
     window.stats()
 }
 
+window.invert = function() {
+    const grid = document.getElementById('grid')
+    const keys = grid.children
+
+    let letters = []
+    for (const key of keys) {
+        letters.push(key.innerHTML)
+    }
+
+    letters = letters.slice(0, 30)
+
+    for (let row=0; row < 3; row++) {
+        for (let col=0; col < 10; col++) {
+            const key = keys[(2-row)*10 + col]
+            const letter = letters.shift()
+
+            key.className = `cell center ${letter}`
+            key.innerHTML = letter
+        }
+    }
+
+    window.stats()
+}
+
 window.copy = function() {
     const matrix = document.getElementById('matrix')
     navigator.clipboard.writeText(matrix.value)
