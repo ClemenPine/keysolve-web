@@ -9,25 +9,13 @@ export function init() {
         option.value = theme;
         option.innerText = theme;
 
-        option.addEventListener('click', async (_) => {
-            const cssUrl = `themes/${option.innerText.toLowerCase()}.json`;
-            await fetch(cssUrl)
-                .then((response) => response.json())
-                .then(
-                    setCssProperties,
-                    () => console.error("This theme does not exist") // should be unreachable
-                )
-        })
+        option.addEventListener('click', setTheme)
 
         selectTheme.appendChild(option)
     }
 }
 
-function setCssProperties(jsonTheme) {
-    const root = document.querySelector(':root')
-
-    for (let property in jsonTheme) {
-        console.log(property, jsonTheme[property])
-        root.style.setProperty(property, jsonTheme[property])
-    }
+async function setTheme(event) {
+    const curr = document.getElementById('theme')
+    curr.href = `themes/${event.target.innerText.toLowerCase()}.css`
 }

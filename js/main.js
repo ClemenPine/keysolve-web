@@ -26,17 +26,6 @@ window.info = function() {
     window.open(url, '_blank')
 }
 
-window.prev = function(prevalence) {
-    let color = prevalence * 30 + Math.log(prevalence * 120 + 1);
-    let base = 95;
-
-    let r = Math.round(base * 0.9 + color * 18);
-    let g = Math.round(base * 1.3 - color * 10);
-    let b = Math.round(base * 1.325 - color * 10);
-
-    return `#${Number(r).toString(16)}${Number(g).toString(16)}${Number(b).toString(16)}`
-}
-
 window.toggle = function() {
     const ngrams = document.getElementById('ngrams')
     const use = document.getElementById('use')
@@ -77,11 +66,6 @@ window.stats = function() {
         cell.innerHTML = `${stat}: ${perc}`
         cell.style.background = color
     } 
-}
-
-window.theme = function(name) {
-    const curr = document.getElementById('theme')
-    curr.href = `themes/${name}.css`
 }
 
 window.mirror = function() {
