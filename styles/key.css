@@ -17,3 +17,7 @@
 .J, .K, .Q, .X, .Z, .\', .\;, .\/, .\- {
     background: var(--color-5);
 }
+
+.excluded {
+    opacity: 30%
+}

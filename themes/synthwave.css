@@ -4,4 +4,7 @@
     --color-3: #9e6da4;
     --color-2: #d7749d;
     --color-1: #ff8585;
+    --color-search: var(--color-1);
+    --color-text: var(--color-bg);
+    --color-shadow: black;
 }

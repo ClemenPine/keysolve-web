@@ -85,15 +85,15 @@
                         <td id="ONE" style="background: var(--color-3);">ONE: 2.54%</td>
                         <td id="RED" style="background: var(--color-1);">RED: 6.84%</td>
                     </tr>
-                </tbody>       
-            </table> 
+                </tbody>
+            </table>
             <table id="use" hidden>
                 <tbody>
                     <tr>
                         <td>LEFT</td>
                         <td id="LI" style="background: var(--color-1);">LI: 18.67%</td>
                         <td id="LM" style="background: var(--color-4);">LM: 10.11%</td>
-                        <td id="LR" style="">LR: 7.78%</td>
+                        <td id="LR">LR: 7.78%</td>
                         <td id="LP" style="background: var(--color-3);">LP: 7.57%</td>
                     </tr>
                     <tr>
@@ -108,8 +108,8 @@
                         <td id="LH" colspan="2" style="background: var(--color-4);">LH: 44.12%</td>
                         <td id="RH" colspan="2" style="background: var(--color-1);">RH: 55.88%</td>
                     </tr>
-                </tbody>              
-            </table> 
+                </tbody>
+            </table>
         </div>
         <div id="toolbar">
             <button class="button" onclick="toggle()">
@@ -138,12 +138,18 @@
     </div>
     <input id="editor" hidden=true>
     <div id="pop-ups" class="center" hidden>
-        <div id="settings">
+        <div id="settings" class="settings-text">
             <div>
-                <hi>Layout Editor</hi>
-                <textarea id="matrix"></textarea>
+                <hi class="settings-text">Layout Editor</hi>
+                <textarea class="settings-text" id="matrix"></textarea>
                 <div>
-                    <button onclick="copy()">Copy</button>
+                    <button class="settings-text" onclick="copy()">Copy</button>
+                </div>
+                <div>
+                    <select id="themes" name="themes" class="settings-text">
+                        <option class="settings-text" selected hidden>Themes</option>
+
+                    </select>
                 </div>
             </div>
         </div>

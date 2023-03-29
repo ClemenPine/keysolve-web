@@ -1,16 +1,20 @@
 import * as search from './search.mjs'
 import * as drag from './drag.mjs'
 import * as board from './board.mjs'
+import * as disable from './disable.mjs'
 import * as stats from './stats.mjs'
 import * as settings from './settings.mjs'
+import * as themes from './themes.mjs'
 
 let base = {}
 
 window.onload = async function() {
     search.init()
     drag.init()
+    disable.init()
     stats.init()
     settings.init()
+    themes.init()
 
     board.stagger()
 
@@ -45,7 +49,7 @@ window.stats = function() {
     for (const [stat, freq] of Object.entries(res)) {
         const cell = document.getElementById(stat)
         const perc = freq.toLocaleString(
-            undefined,{style: 'percent', minimumFractionDigits:2}
+            undefined, { style: 'percent', minimumFractionDigits:2 }
         )
 
         if (!(stat in base)) {
@@ -62,11 +66,6 @@ window.stats = function() {
         cell.innerHTML = `${stat}: ${perc}`
         cell.style.background = color
     } 
-}
-
-window.theme = function(name) {
-    const curr = document.getElementById('theme')
-    curr.href = `themes/${name}.css`
 }
 
 window.mirror = function() {
