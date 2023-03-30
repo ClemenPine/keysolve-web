@@ -1,4 +1,5 @@
 import * as drag from './drag.mjs'
+import * as disable from './disable.mjs'
 import * as classify from './classify.mjs'
 
 export let board = 'stagger'
@@ -55,6 +56,8 @@ export function update(layout) {
     }
 
     drag.init()
+    disable.init()
+    
     window.stats()
 }
 
