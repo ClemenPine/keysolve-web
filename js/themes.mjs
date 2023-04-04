@@ -9,13 +9,15 @@ export function init() {
         option.value = theme;
         option.innerText = theme;
 
-        option.addEventListener('click', setTheme)
-
         selectTheme.appendChild(option)
     }
+
+    selectTheme.addEventListener('change', setTheme)
 }
 
 async function setTheme(event) {
     const curr = document.getElementById('theme')
-    curr.href = `themes/${event.target.innerText.toLowerCase()}.css`
+    curr.href = `themes/${event.target.value.toLowerCase()}.css`
+
+    console.log(curr)
 }
