@@ -18,6 +18,4 @@ export function init() {
 async function setTheme(event) {
     const curr = document.getElementById('theme')
     curr.href = `themes/${event.target.value.toLowerCase()}.css`
-
-    console.log(curr)
 }
