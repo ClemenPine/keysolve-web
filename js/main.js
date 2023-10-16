@@ -1,6 +1,7 @@
 import * as search from './search.mjs'
 import * as drag from './drag.mjs'
 import * as board from './board.mjs'
+import * as corpora from './corpora.mjs'
 import * as disable from './disable.mjs'
 import * as stats from './stats.mjs'
 import * as settings from './settings.mjs'
@@ -15,6 +16,7 @@ window.onload = async function() {
     stats.init("monkeyracer")
     settings.init()
     themes.init()
+    corpora.init()
 
     board.stagger()
 

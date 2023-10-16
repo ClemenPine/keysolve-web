@@ -3,10 +3,10 @@ import {classify, FINGER_MAP} from './classify.mjs'
 
 const FINGERS = ['LP', 'LR', 'LM', 'LI', 'LT', 'RT', 'RI', 'RM', 'RR', 'RP']
 
-let MONOGRAMS = null
-let BIGRAMS = null
-let SKIPGRAMS = null
-let TRIGRAMS = null
+export let MONOGRAMS = null
+export let BIGRAMS = null
+export let SKIPGRAMS = null
+export let TRIGRAMS = null
 
 export async function init(language) {
     MONOGRAMS = await (await fetch(`corpora/${language}/monograms.json`)).json()
