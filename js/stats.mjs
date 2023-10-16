@@ -8,11 +8,11 @@ let BIGRAMS = null
 let SKIPGRAMS = null
 let TRIGRAMS = null
 
-export async function init() {
-    MONOGRAMS = await (await fetch('corpora/monograms.json')).json()
-    BIGRAMS = await (await fetch('corpora/bigrams.json')).json()
-    SKIPGRAMS = await (await fetch('corpora/skipgrams.json')).json()
-    TRIGRAMS = await (await fetch('corpora/trigrams.json')).json()
+export async function init(language) {
+    MONOGRAMS = await (await fetch(`corpora/${language}/monograms.json`)).json()
+    BIGRAMS = await (await fetch(`corpora/${language}/bigrams.json`)).json()
+    SKIPGRAMS = await (await fetch(`corpora/${language}/skipgrams.json`)).json()
+    TRIGRAMS = await (await fetch(`corpora/${language}/trigrams.json`)).json()
 }
 
 export function analyze() {

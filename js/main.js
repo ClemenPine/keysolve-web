@@ -12,7 +12,7 @@ window.onload = async function() {
     search.init()
     drag.init()
     disable.init()
-    stats.init()
+    stats.init("monkeyracer")
     settings.init()
     themes.init()
 
